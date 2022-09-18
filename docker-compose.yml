@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  converter:
+    image: amrit3701/freecad-cli:latest
+    volumes:
+      - ./convert:/app/convert
+      - ./step_to_stl.py:/app/step_to_stl.py
+    working_dir: /app
+    command: [python3, step_to_stl.py]
